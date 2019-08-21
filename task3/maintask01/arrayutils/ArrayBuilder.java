@@ -7,8 +7,16 @@
  */
 
 package by.epam.javatraining.shamshur.task3.maintask01.arrayutils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class ArrayBuilder {
+	
+	/**
+	 * logger variable
+	 */
+	private static final Logger LOG = LogManager.getLogger(ArrayBuilder.class);
 	
 	/**
 	 * swap element on xPos with yPos in int[]
@@ -40,7 +48,7 @@ public class ArrayBuilder {
 		{
 			array = swapEl(array,i,size);
 		}
-		
+		LOG.info("array was reversed");
 		return array;
 	}
 	
@@ -141,6 +149,7 @@ public class ArrayBuilder {
 		//check, if array divided to 1 element
 		if (size < 2) 
 		{
+			LOG.error("merge sort  stoped, size < 2");
 			return null;
 		}
 		

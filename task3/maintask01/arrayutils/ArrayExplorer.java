@@ -10,9 +10,16 @@
  */
 
 package by.epam.javatraining.shamshur.task3.maintask01.arrayutils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ArrayExplorer 
 {
+	/**
+	 * Log variable
+	 */
+	private static final Logger LOG = LogManager.getLogger(ArrayExplorer.class);
+	
 	/**
 	 * find max/min element and its position
 	 * @param array
@@ -53,6 +60,7 @@ public class ArrayExplorer
 		//if no extremums return {-1}
 		if (extrem[0] == extrem[2])
 		{
+			LOG.warn("extremums not found");
 			return new int[] {-1};
 		}
 		
@@ -100,7 +108,7 @@ public class ArrayExplorer
 		int size = array.length;
 		int sum = 0;
 		
-		while(--size > 0)
+		while(--size >= 0)
 		{
 			sum += array[size];
 		}
@@ -120,7 +128,7 @@ public class ArrayExplorer
 		//set first multiplicator as 1 to avoid 0 result
 		int mul = 1;
 		
-		while(--size > 0)
+		while(--size >= 0)
 		{
 			mul *= array[size];
 		}
@@ -176,6 +184,7 @@ public class ArrayExplorer
 			return descendingSorted;
 		}
 		
+		LOG.warn("array not sorted");
 		//else return -1
 		return notSorted;
 	}
@@ -199,6 +208,7 @@ public class ArrayExplorer
                 return i;
             }
         }
+        LOG.warn("local min not found");
         //if not found -1
 		return -1;
 	}
@@ -222,6 +232,7 @@ public class ArrayExplorer
                 return i;
             }
         }
+        LOG.warn("local max not found");
         //if not found -1
 		return -1;
 	}
@@ -247,6 +258,7 @@ public class ArrayExplorer
 		}
 		
 		//-1 if value not found
+		LOG.warn("value not found");
 		return -1;
 	}
 	
@@ -282,6 +294,7 @@ public class ArrayExplorer
 				first = center + 1;
 			}
 		}
+		LOG.warn("value not found");
 		//-1 if value not found
 		return -1;
 	}
