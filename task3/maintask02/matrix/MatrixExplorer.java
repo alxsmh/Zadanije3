@@ -181,11 +181,23 @@ public class MatrixExplorer
 		return mul;
 	}
 	
+	/**
+	 * Calculates size of two dimensional matrix
+	 * like m*n
+	 * @param array
+	 * @return size of matrix
+	 */
 	private static int calculateMatrixSize(int[][] array)
 	{
 		return array.length * array[0].length;
 	}
 	
+	/**
+	 * Checks if inputed matrix is symetric
+	 * @param array
+	 * @return boolean
+	 * @see compareArrays
+	 */
 	public static boolean isSymetricMatrix(int[][] array)
 	{
 		if (isQuadric(array)) 
@@ -198,6 +210,11 @@ public class MatrixExplorer
 		}
 	}
 	
+	/**
+	 * Checks if matrix has sizes n = n
+	 * @param array
+	 * @return boolean
+	 */
 	public static boolean isQuadric(int[][] array)
 	{	
 		int rowSize = array.length;
@@ -214,12 +231,18 @@ public class MatrixExplorer
 		
 	}
 	
+	/**
+	 * Return int[] array of main diagonal elements
+	 * @param array
+	 * @return int[]
+	 */
 	public static int[] calculateMainDiagonal(int[][] array)
 	{
 		int rowSize = array.length;
 		
 		int[] diagArr = new int[rowSize];
 		
+		//paste elements in result from the end position
 		while (--rowSize > 0)
 		{
 			diagArr[rowSize] = array[rowSize][rowSize];
@@ -228,6 +251,11 @@ public class MatrixExplorer
 		return diagArr;
 	}
 	
+	/**
+	 * Return int[] array of non main diagonal elements
+	 * @param array
+	 * @return int[]
+	 */
 	public static int[] calculateNonMainDiagonal(int[][] array)
 	{
 		int rowSize = array.length;
@@ -235,6 +263,7 @@ public class MatrixExplorer
 		
 		int[] diagArr = new int[rowSize];
 		
+		//paste elements  that are not on main diagonal to result array
 		while (--rowSize > 0)
 		{
 			diagArr[rowSize] = array[rowSize][colSize++];
@@ -243,6 +272,13 @@ public class MatrixExplorer
 		return diagArr;
 	}
 	
+	
+	/**
+	 * Compares, if int[] arrays are equal in length and elements
+	 * @param a
+	 * @param b
+	 * @return boolean
+	 */
 	public static boolean compareArrays(int[] a, int[] b)
 	{
 		if (a.length != b.length)
@@ -265,6 +301,12 @@ public class MatrixExplorer
 		return false;
 	}
 	
+	/**
+	 * Find first local minimum pos
+	 * @param array
+	 * @return
+	 * @see ArrayExplorer
+	 */
 	public static int[] firstLocalMinPos(int[][] array)
 	{
 		int rowSize = array.length;
@@ -287,6 +329,12 @@ public class MatrixExplorer
 		
 	}
 	
+	/**
+	 * Find first local maximum position
+	 * @param array
+	 * @return
+	 * @see ArrayExxplorer
+	 */
 	public static int[] firstLocalMaxPos(int[][] array)
 	{
 		int rowSize = array.length;

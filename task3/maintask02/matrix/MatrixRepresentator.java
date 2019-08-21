@@ -15,6 +15,11 @@ import by.epam.javatraining.shamshur.task3.maintask02.matrix.MatrixBuilder;
 
 public class MatrixRepresentator {
 	
+	/**
+	 * Output matrix to console
+	 * @param a int[][]
+	 * @see ArrayRepresentator
+	 */
 	public static void printIntMatrix (int[][] a)
 	{
 		int exLen = a.length;
@@ -26,6 +31,11 @@ public class MatrixRepresentator {
 		}
 	}
 	
+	/**
+	 * Print max and min element pos
+	 * @param a
+	 * @see MatrixExplorer
+	 */
 	public static void printMinMaxPos(int[][] a)
 	{
 		System.out.print("\n");
@@ -36,6 +46,11 @@ public class MatrixRepresentator {
 		System.out.print("\n");
 	}
 	
+	/**
+	 * Print Aritmetic and Geometric AVGs to console
+	 * @param a
+	 * @see MatrixExplorer
+	 */
 	public static void printArythmeticGeometricAVG(int[][] a)
 	{
 		System.out.print("\n");
@@ -46,6 +61,11 @@ public class MatrixRepresentator {
 		System.out.print("\n");
 	}
 	
+	/**
+	 * Print if inputed matrix is symetric 
+	 * @param a
+	 * @see MatrixExplorer
+	 */
 	public static void printIsSymmetric(int[][] a)
 	{
 		System.out.print("\n");
@@ -62,11 +82,17 @@ public class MatrixRepresentator {
 		System.out.print("\n");
 	}
 	
+	/**
+	 * Print local extremums
+	 * @param a
+	 * @see MatrixExplorer
+	 */
 	public static void printFirstLocalExtremums(int[][] a)
 	{
 		int [] maxPos = MatrixExplorer.firstLocalMaxPos(a);
 		int [] minPos = MatrixExplorer.firstLocalMinPos(a);
 		
+		//if poses are not found, there be -1 in min or max poses
 		if ((maxPos[1] == -1) || (minPos[1] == -1))
 		{
 			System.out.print("\n");
@@ -90,6 +116,11 @@ public class MatrixRepresentator {
 		}	
 	}
 	
+	/**
+	 * Prints transpointed matrix
+	 * @param a
+	 * @see MatrixBuilder
+	 */
 	public static void printTranspMatrix(int[][] a)
 	{
 		System.out.print("\n");
